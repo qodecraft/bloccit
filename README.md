@@ -1,5 +1,5 @@
 This is a clone of reddit!
-
+This is the link to the app on heroku [blocreddit](https://blocreddit.herokuapp.com/)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
