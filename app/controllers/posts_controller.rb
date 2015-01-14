@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+  
 
   def show
     @post = Post.find(params[:id])
@@ -14,7 +18,7 @@ class PostsController < ApplicationController
   
   
    def create
-     @post = current_user.posts.build(params.require(:post).permit(:title, :body))
+     @post = current_user.posts.build(post_params)
      @topic = Topic.find(params[:topic_id])
      authorize @post
      if @post.save
@@ -37,7 +41,7 @@ class PostsController < ApplicationController
      @post = Post.find(params[:id])
      @topic = Topic.find(params[:topic_id])
      authorize @post
-     if @post.update_attributes(params.require(:post).permit(:title, :body))
+     if @post.update_attributes(post_params)
        flash[:notice] = "Post was updated."
        redirect_to [@topic, @post]
      else
