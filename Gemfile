@@ -3,6 +3,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'faker'
 gem 'devise'
 gem 'sendgrid'
+ gem 'pundit'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
