@@ -4,6 +4,7 @@ gem 'faker'
 gem 'devise'
 gem 'sendgrid'
  gem 'pundit'
+gem 'redcarpet'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
