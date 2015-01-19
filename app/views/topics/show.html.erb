@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-<h1><%= @topic.name %></h1>
-=======
 <<h1><%= markdown @topic.name %></h1>
->>>>>>> markdown
 
 <% if policy(@topic).update? %>
   <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
@@ -18,7 +14,7 @@
             <%= link_to post.title, [@topic, post] %>
           </h4>
           <small>
-            submitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.name %> <br/>
+            sumbitted <%= time_ago_in_words(post.created_at) %> by <%= post.user.name %> <br/>
             <%= post.comments.count %> Comments
             </small>
         </div>
