@@ -5,7 +5,6 @@ gem 'devise'
 gem 'sendgrid'
  gem 'pundit'
 gem 'redcarpet'
-gem 'fog'
 gem "carrierwave"
 gem "cloudinary"
 

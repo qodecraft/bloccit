@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def update
     if current_user.update_attributes(user_params)
       flash[:notice] = "Info Updated"
-      redirect_to edit_user_registeration_path
+      redirect_to edit_user_registration_path
     else
       flash[:error] = "Try again!"
       redirect_to edit_user_registration_path
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :avatar)
   end
   
 end

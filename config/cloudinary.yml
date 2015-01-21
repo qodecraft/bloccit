@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hm8twajjq
+  api_key: '572431954995279'
+  api_secret: GMNyjdVpeH1nvyP0Ss-XDRm4Q34
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hm8twajjq
+  api_key: '572431954995279'
+  api_secret: GMNyjdVpeH1nvyP0Ss-XDRm4Q34
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hm8twajjq
+  api_key: '572431954995279'
+  api_secret: GMNyjdVpeH1nvyP0Ss-XDRm4Q34
+  enhance_image_tag: true
+  static_image_support: false
