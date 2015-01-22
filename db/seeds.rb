@@ -36,11 +36,13 @@ end
 posts = Post.all
 
 # Create Comments
-100.times do
+150.times do
   Comment.create!(
      # user: users.sample,   # we have not yet associated Users with Comments
     post: posts.sample,
-    body: Faker::Lorem.paragraph
+    body: Faker::Lorem.paragraph,
+    user: users.sample,
+    
   )
 end
 
