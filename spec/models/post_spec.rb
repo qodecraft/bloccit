@@ -4,7 +4,7 @@ describe Post do
   describe "Vote Methods" do
     
     before do
-      @post = Post.create(title: 'post title' body: 'Post body')
+      @post = Post.create( title: 'post title', body: 'Post body has to be longer')
       3.times { @post.votes.create(value: 1) }
       2.times { @post.votes.create(value: -1) }
     end
@@ -16,14 +16,14 @@ describe Post do
     end
     
     describe '#down_votes' do
-      it "counts the number of upvotes with value = -1" dp
-        expect( @post.up_votes ).to eq(2)
+      it "counts the number of upvotes with value = -1" do
+        expect( @post.down_votes ).to eq(2)
       end
     end
   
     describe '#points' do
       it "Adds the upvotes and downvotes" do
-        expecct ( @post.points ).to eq(1)
+        expect( @post.points ).to eq(1)
       end
     end
   end
