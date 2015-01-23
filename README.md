@@ -1,28 +1,15 @@
 This is a clone of reddit!
 This is the link to the app on heroku [blocreddit](https://blocreddit.herokuapp.com/)
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+<blockquote>
+  <p><%= comment.body %></p>
+  <footer><%= image_tag(User.find(comment.user_id).avatar.tiny.url) %>  <%= User.find(comment.user_id).name %>, posted <%= time_ago_in_words(comment.created_at) %> ago.
+    <% if policy(comment).destroy? %>
+      <%= link_to "Delete", comment_url_helper(comment), method: :delete, remote: true %>
+    <% end %> 
+  </footer>
+</blockquote>
+<% end %>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+.
+<%= render partial: '/comments/comment', collection: @comments %>
