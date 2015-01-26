@@ -7,10 +7,10 @@ class Post < ActiveRecord::Base
   
 validates :title, length: { minimum: 5 }, presence: true
    validates :body, length: { minimum: 20 }, presence: true
-   #validates :topic, presence: true
-   #validates :user, presence: true
+   validates :topic, presence: true
+   validates :user, presence: true
   
-  after_create :create_vote
+
   
   
 
@@ -38,10 +38,10 @@ validates :title, length: { minimum: 5 }, presence: true
   
   default_scope { order('rank DESC') }
   
-  private
+ 
   
   def create_vote
-    update_attribute(:rank, 1)
+    user.votes.create(value: 1, post: self)
   end
   
 end
