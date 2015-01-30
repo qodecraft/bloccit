@@ -12,5 +12,5 @@ class FavoriteMailer < ActionMailer::Base
     @comment = comment
     
     mail(to: user.email, subject: "New comment on #{post.tile}")
-  end
+  end  
 end
