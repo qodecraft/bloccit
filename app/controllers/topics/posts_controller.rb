@@ -21,7 +21,10 @@ class Topics::PostsController < ApplicationController
   
    def create
      @topic = Topic.find(params[:topic_id])
-     @post = current_user.posts.build(post_params)
+     puts "here is the topic id"
+     puts @topic.inspect
+     @post = @topic.posts.build(post_params)
+     @post.user = current_user
      authorize @post
      if @post.save
        @post.create_vote
